@@ -1,1 +1,77 @@
+#include <iostream>
+#include <string>
+using namespace std;
 
+class Transport
+{
+public:
+    string type;
+    string fule;
+
+    void turn() {
+        cout << "Transport is turning" << endl;
+    }
+
+    void ride() {
+        cout << "Transport is going" << endl;
+    }
+
+    void stop() {
+        cout << "Transport is stopping" << endl;
+    }
+};
+class Bicycle : public Transport 
+{
+private:  
+    string model;
+    int year;
+    string color;
+public:
+
+
+    void setModel(string setModel) {
+        model = setModel;
+    }
+    string getModel() {
+        return model;
+    }
+
+    void setYear(int setYear) {
+        year = setYear;
+    }
+    int getYear() {
+        return year;
+    }
+
+
+    void setColor(string setColor) {
+        color = setColor;
+    }
+    string getColor() {
+        return color;
+    }
+
+    void print() {
+        cout << "Bicycle model: " << getModel() << endl;
+        cout << "Year of the bicycle: " << getYear() << endl;
+        cout << "Color of the bike: " << getColor() << endl;
+    }
+};
+
+int main() {
+    Bicycle myBicycle;
+
+    myBicycle.type = "Bicycle";
+    myBicycle.fule = "none";
+
+    myBicycle.setModel("BMX");
+    myBicycle.setYear(2023);
+    myBicycle.setColor("Black");
+
+    myBicycle.print();
+
+    myBicycle.ride();
+    myBicycle.turn();
+    myBicycle.stop();
+
+}
